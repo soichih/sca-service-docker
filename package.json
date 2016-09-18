@@ -1,0 +1,16 @@
+{
+  "name": "sca-service-docker",
+  "version": "1.0.0",
+  "description": "SCA service to execute docker container on the container host",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "start.sh",
+    "status": "status.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soichih/sca-service-docker.git"
+  },
+  "author": "Soichi Hayashi <hayashis@iu.edu>",
+  "license": "MIT"
+}

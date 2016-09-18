@@ -1,0 +1,8 @@
+{
+    "container": "centos",
+    "arguments": "sh -c 'ls -la /input > /output/list.txt'",
+    "inputs": {
+      "input": "../57dc85a0bf3bfa373c8d8a04/input",
+      "input2": "../57dc85a0bf3bfa373c8d8a04/input2"
+    }
+}
