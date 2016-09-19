@@ -10,11 +10,6 @@ then
         chmod +x $SCA_SERVICE_DIR/jq
 fi
 
-echo "writing out preprocessing script"
-$SCA_SERVICE_DIR/jq -r '.bash' config.json > pre.sh
-chmod +x pre.sh 
-echo "executing preprocessing script"
-./pre.sh
 
 echo "creating symlink for each input directories"
 for key in `jq -r '.inputs | keys[]' config.json`; do
@@ -30,6 +25,12 @@ gid=`id -g`
 
 #TODO - it's very important to validate the container and arguments so that user won't escape out of docker command line
 #TODO - like disallow any character except alpha, number and '/' in container name, and no ';' '>', etc.. in arguments
+
+echo "writing out preprocessing script"
+$SCA_SERVICE_DIR/jq -r '.bash' config.json > pre.sh
+chmod +x pre.sh 
+echo "executing preprocessing script"
+./pre.sh
 
 #mount for input directories
 mount=""
