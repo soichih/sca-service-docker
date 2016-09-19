@@ -48,7 +48,7 @@ echo $cmd
 
 rm -f finished
 (
-eval $cmd > stdout.log 2>&1 stderr.log
+eval $cmd > stdout.log 2> stderr.log
 echo $? > finished 
 echo "[]" > products.json
 ) &
