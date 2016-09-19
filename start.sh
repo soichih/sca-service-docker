@@ -10,9 +10,11 @@ then
         chmod +x $SCA_SERVICE_DIR/jq
 fi
 
-#echo "writing out script stored in config.json"
-#$SCA_SERVICE_DIR/jq -r '.bash' config.json > script.sh
-#chmod +x script.sh
+echo "writing out preprocessing script"
+$SCA_SERVICE_DIR/jq -r '.bash' config.json > pre.sh
+chmod +x pre.sh 
+echo "executing preprocessing script"
+./pre.sh
 
 echo "creating symlink for each input directories"
 for key in `jq -r '.inputs | keys[]' config.json`; do
